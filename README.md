@@ -1,0 +1,1 @@
+#Regular expression panel for Adobe Brackets
