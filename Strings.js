@@ -36,7 +36,7 @@ define(function (require, exports, module) {
             "CMD_TEST_REGEXP"                  : 'Show regular expression panel',
             "UI_LABEL_REGEXP"                  : "Regular expression",
             "UI_LABEL_SUBJECT"                 : "Subject string",
-            "UI_LABEL_OUPUT"                   : "Command output",
+            "UI_LABEL_OUTPUT"                   : "Command output",
             "UI_CHECK_UPPERCASESENSE"          : "Not distinguish between uppercase and lowercase",
             "UI_INSERTCODE_BUTTON"             : "Inser code",
             "UI_BUTTON_CHECKEXPRESSION"        : "Check expression",
@@ -47,17 +47,17 @@ define(function (require, exports, module) {
         },
         'es': {
             // commands
-            "CMD_TEST_REGEXP"                  : 'Show regular expression panel',
-            "UI_LABEL_REGEXP"                  : "Regular expression",
-            "UI_LABEL_SUBJECT"                 : "Subject string",
-            "UI_LABEL_OUPUT"                   : "Command output",
-            "UI_CHECK_UPPERCASESENSE"          : "Not distinguish between uppercase and lowercase",
-            "UI_INSERTCODE_BUTTON"             : "Inser code",
-            "UI_BUTTON_CHECKEXPRESSION"        : "Check expression",
-            "UI_BUTTON_SHOWMATCHES"            : "Show matches",
-            "UI_LABEL_NOMATCHES"               : "No matches",
-            "UI_LABEL_SUCESSMATCH"             : "Succesfull match",
-            "UI_LABEL_NOMATCH"                 : "No match"
+            "CMD_TEST_REGEXP"                  : 'Mostrar panel de expresiones regulares',
+            "UI_LABEL_REGEXP"                  : "Expresi&oacute;n regular",
+            "UI_LABEL_SUBJECT"                 : "Aplicar a cadena",
+            "UI_LABEL_OUTPUT"                   : "Salida del comando",
+            "UI_CHECK_UPPERCASESENSE"          : "No distinguir entre may&uacute;sculas y min&uacute;sculas",
+            "UI_INSERTCODE_BUTTON"             : "Insertar c&oacute;digo",
+            "UI_BUTTON_CHECKEXPRESSION"        : "Validar expresi&oacute;n",
+            "UI_BUTTON_SHOWMATCHES"            : "Mostrar coincidencias",
+            "UI_LABEL_NOMATCHES"               : "No hay coincidencias",
+            "UI_LABEL_SUCESSMATCH"             : "Comparaci&oacute;n exitosa",
+            "UI_LABEL_NOMATCH"                 : "No coincide"
         }
     };
     

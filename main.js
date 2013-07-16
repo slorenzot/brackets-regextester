@@ -61,6 +61,10 @@ define(function (require, exports, module) {
             return (/^\/(.*)\/$/).test(text);
         },
         test: function (string, tests, casesense) {
+            if (string === '') {
+                return false;
+            }
+            
             var options = casesense ? 'i' : '', regExp = new RegExp(string, options);
             
             return regExp.test(tests);
@@ -72,8 +76,8 @@ define(function (require, exports, module) {
         }
     };
     /*jslint regexp: false */
-
-    var editMenu             = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
+    
+    var viewMenu             = Menus.getMenu(Menus.AppMenuBar.VIEW_MENU);
 
     /**
      * Register commands
@@ -82,16 +86,22 @@ define(function (require, exports, module) {
         langs.CMD_TEST_REGEXP,
         Commands.CMD_TEST_REGEXP,
         function () {
-            panel.show();
+            regextest_cmd.setChecked(!regextest_cmd.getChecked());
+            
+            if (!regextest_cmd.getChecked()) {
+                panel.hide();
+            } else {
+                panel.show();
+            }
         }
     );
 
-    if (editMenu) {
-        editMenu.addMenuDivider();
-        editMenu.addMenuItem(
+    if (viewMenu) {
+        viewMenu.addMenuDivider();
+        viewMenu.addMenuItem(
             Commands.CMD_TEST_REGEXP,
             Shortcuts.allPlatforms.CMD_TEST_REGEXP_NOW,
-            editMenu.LAST_IN_SECTION
+            viewMenu.LAST_IN_SECTION
         );
     }
 
@@ -105,10 +115,7 @@ define(function (require, exports, module) {
                 selectedText = editor.getSelectedText(); // get selected text, if there is
 
                 if (editor.hasSelection() && regexp.is_regexp(selectedText)) {
-                    regextest_cmd.setEnabled(true);
                     $regexp.val(selectedText);
-                } else {
-                    regextest_cmd.setChecked(false);
                 }
             });
         });
@@ -124,18 +131,31 @@ define(function (require, exports, module) {
         $regexp = $("#panel-brackets-regextester-regexp"); // regexp textbox
         $subject = $("#panel-brackets-regextester-subject"); // string textbox
         $output = $("#panel-brackets-regextester-output"); // output textbox
-        $casesense = $("#panel-brackets-regextester-caseunsense");
+        $casesense = $("#panel-brackets-regextester-caseunsense"); // uppercase/lowecase checkbox 
         
         $testRegExpCmd = $("#panel-brackets-regextester-test");
         $matchRegExpCmd = $("#panel-brackets-regextester-match");
+        
+        $("#panel-brackets-regextester-regexp-title").empty().append(langs.UI_LABEL_REGEXP);
+        $("#panel-brackets-regextester-subject-title").empty().append(langs.UI_LABEL_SUBJECT);
+        $("#panel-brackets-regextester-output-title").empty().append(langs.UI_LABEL_OUTPUT);
+        $("#panel-brackets-regextester-caseunsense-title").empty().append(langs.UI_CHECK_UPPERCASESENSE);
+        $("#panel-brackets-regextester-insert-title").empty().append(langs.UI_INSERTCODE_BUTTON);
+        $("#panel-brackets-regextester-test-title").empty().append(langs.UI_BUTTON_CHECKEXPRESSION);
+        $("#panel-brackets-regextester-match-title").empty().append(langs.UI_BUTTON_SHOWMATCHES);
+        
+        $("#panel-brackets-regextester-close").on('click', function () {
+            regextest_cmd.setChecked(false);
+            panel.hide();
+        });
         
         $testRegExpCmd.on("click", function () {
             var out = regexp.test($regexp.val(), $subject.val(), $casesense.is(":checked"));
             
             if (out) {
-                $output.empty().append("Successfull match");
+                $output.empty().append(langs.UI_LABEL_SUCESSMATCH);
             } else {
-                $output.empty().append("No match");
+                $output.empty().append(langs.UI_LABEL_NOMATCHES);
             }
         });
         
@@ -154,7 +174,7 @@ define(function (require, exports, module) {
                 });
                 
             } catch (e) {
-                $output.append("No matches");
+                $output.append(langs.UI_LABEL_NOMATCHES);
             }
         });
     }

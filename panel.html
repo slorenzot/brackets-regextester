@@ -1,5 +1,5 @@
 <div id="panel-brackets-regextester" class="bottom-panel vert-resizable top-resizer" style="padding:10px;">
-    <div>
+    <div style="float:left;width:96%">
         <table style="width:100%">
             <tr>
                 <td style="width:140px;"></td>
@@ -10,7 +10,7 @@
                     <span id="panel-brackets-regextester-regexp-title">Regular expression:</span>
                 </td>
                 <td>
-                    <input id="panel-brackets-regextester-regexp" type="text" style="width:90%;"/>
+                    <input id="panel-brackets-regextester-regexp" type="text" style="width:98%;"/>
                 </td>
             </tr>
             <tr>
@@ -18,7 +18,7 @@
                     <span id="panel-brackets-regextester-subject-title">Subject string:</span>
                 </td>
                 <td>
-                    <input id="panel-brackets-regextester-subject" type="text" style="width:90%;"/>
+                    <input id="panel-brackets-regextester-subject" type="text" style="width:98%;"/>
                 </td>
             </tr>
             <tr>
@@ -26,8 +26,7 @@
                     <span id="panel-brackets-regextester-output-title">Command output:</span>
                 </td>
                 <td style="height:40px;">
-<!--                    <input id="panel-brackets-regextester-output" type="text" style="width:90%;"/>-->
-                    <span id="panel-brackets-regextester-output"></span>
+                    <div id="panel-brackets-regextester-output">&nbsp;</div>
                 </td>
             </tr>
             <tr>
@@ -35,18 +34,22 @@
                     &nbsp;
                 </td>
                 <td>
-                    <label for="panel-brackets-regextester-caseunsense"><input id="panel-brackets-regextester-caseunsense" type="checkbox"><span id="">Not distinguish between uppercase and lowercase</span></label>
+                    <label for="panel-brackets-regextester-caseunsense"><input id="panel-brackets-regextester-caseunsense" type="checkbox"><span id="panel-brackets-regextester-caseunsense-title">Not distinguish between uppercase and lowercase</span></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button id="panel-brackets-regextester-insert">Insert code</button>
+                    <button id="panel-brackets-regextester-insert-title">Insert code</button>
                 </td>
                 <td style="text-align:right">
-                    <button id="panel-brackets-regextester-test">Check expression</button>
-                    <button id="panel-brackets-regextester-match">Show matches</button>
+                    <button id="panel-brackets-regextester-test"><span  id="panel-brackets-regextester-test-title">Check expression</span></button>
+                    <button id="panel-brackets-regextester-match"><span  id="panel-brackets-regextester-match-title">Show matches</span></button>
                 </td>
             </tr>
         </table>
     </div>
+    <div style="float:right;width:10px;">
+        <a id="panel-brackets-regextester-close" href="#" class="regex-button-close-panel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    </div>
+    <div style="clear:both;"></div>
 </div>

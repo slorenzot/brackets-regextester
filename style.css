@@ -18,3 +18,16 @@ html {
     margin-right: 5px;
     border-radius: 3px;
 }
+
+
+.regex-button-close-panel {
+    background-image: url(close_icon.gif);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    margin: 5px 0px 5px 0px;
+    width: 18px;
+    height: 30px;
+    padding-top: 5px;
+    padding-right: 5px;
+    text-decoration-line: none;
+}
