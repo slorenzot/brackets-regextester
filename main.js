@@ -140,7 +140,6 @@ define(function (require, exports, module) {
         $("#panel-brackets-regextester-subject-title").empty().append(langs.UI_LABEL_SUBJECT);
         $("#panel-brackets-regextester-output-title").empty().append(langs.UI_LABEL_OUTPUT);
         $("#panel-brackets-regextester-caseunsense-title").empty().append(langs.UI_CHECK_UPPERCASESENSE);
-        $("#panel-brackets-regextester-insert-title").empty().append(langs.UI_INSERTCODE_BUTTON);
         $("#panel-brackets-regextester-test-title").empty().append(langs.UI_BUTTON_CHECKEXPRESSION);
         $("#panel-brackets-regextester-match-title").empty().append(langs.UI_BUTTON_SHOWMATCHES);
         
